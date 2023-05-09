@@ -1,0 +1,354 @@
+@use "../../scss/" as *;
+
+.property-container {
+    flex-grow: 1;
+    
+    display: flex;
+    flex-direction: column;
+
+    .property {
+        display: flex;
+        flex-direction: column;
+
+        .property-infos {
+            display: flex;
+    
+            .property-left {
+                flex-grow: 1;
+
+                h1 {
+                    color: $main-color;
+                    margin: 0;
+                    padding-bottom: .45rem;
+                }
+        
+                &-location {
+                    @include font($fontSize: 1.125rem);
+                    color: $main-color;
+                }
+
+                &-tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 1.25rem;
+                    gap: 0.65rem;
+                
+                    span {
+                        color: #FFFFFF;
+                        background: $main-color;
+                        padding: .25rem 1.5rem;
+                    }
+                }
+            }
+
+            .host {
+                white-space: pre-line;
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                gap: 1.65rem;
+    
+                &-profile {
+                    display: flex;
+                    align-items: center;
+                    gap: .65rem;
+    
+                    &-name {
+                        color: $main-color;
+                        width: min-content;
+                        line-height: 142.6%;
+                    }
+    
+                    &-image {
+                        background-color: #C4C4C4;
+                        border-radius: 50%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                            border-radius: inherit;
+                        }
+                    }
+                }
+    
+                &-rating {
+                    display: flex;
+
+                   &-star {
+                        background: url("../../assets/img/star.svg");
+                        display: inline-block;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative;
+    
+                        &.checked::after {
+                            content: "";
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            mask-image: url("../../assets/img/star.svg");
+                            mask-position: center;
+                            mask-size: contain;
+                            mask-repeat: no-repeat;
+                            background: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .property-description {
+            display: flex;
+        }
+    }
+
+    @include responsive(small) {
+        margin: 1rem $margin-s-lr 0;
+
+        .property {
+            margin-top: 1rem;
+
+            .property-infos {
+                flex-direction: column;
+    
+                .property-left {
+                    h1 {
+                        @include font($fontSize: 1.125rem);
+                        line-height: 142.6%;
+                    }
+
+                    &-location {
+                        @include font($fontSize: .875rem);
+                    }
+
+                    &-tags {
+                        margin-top: .625rem;
+                    
+                        span {
+                            @include font($fontSize: .675rem);
+                            border-radius: 5px;
+                        }
+                    }
+                }
+    
+                .host {
+                    margin-top: 1rem;
+                    flex-direction: row-reverse !important;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    &-profile {
+                        &-name {
+                            @include font($fontSize: .75rem);
+                        }
+
+                        &-image {
+                            height: 2rem;
+                            aspect-ratio: 1 / 1;
+                        }
+                    }
+
+                    &-rating {
+                        gap: .4rem;
+        
+                       &-star {
+                            height: .85rem;
+                            width: .85rem;
+                       }
+                    }
+                }
+            }
+    
+            .property-description {
+                flex-direction: column;
+                margin-top: 1rem;
+                gap: 1.25rem;
+
+                .accordion {
+                    flex: 1;
+    
+                    .accordion-header {
+                        border-radius: 5px;
+                        padding: .35rem 1rem;
+    
+                        .accordion-title {
+                            @include font($fontSize: .8rem);
+                        }
+                    }
+    
+                    .collapse-content {
+                        @include font($fontWeight: 400, $fontSize: .75rem);
+                        padding: 1rem 0.45rem 1rem 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(medium) {
+        margin: 1rem $margin-m-lr 0;
+
+        .property {
+            margin-top: 1rem;
+
+            .property-infos {
+                flex-direction: column;
+    
+                .property-left {
+                    h1 {
+                        @include font($fontSize: 1.125rem);
+                        line-height: 142.6%;
+                    }
+
+                    &-location {
+                        @include font($fontSize: .875rem);
+                    }
+
+                    &-tags {
+                        margin-top: .625rem;
+                    
+                        span {
+                            @include font($fontSize: .675rem);
+                            border-radius: 5px;
+                        }
+                    }
+                }
+    
+                .host {
+                    margin-top: 1rem;
+                    flex-direction: row-reverse !important;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    &-profile {
+                        &-name {
+                            @include font($fontSize: .75rem);
+                        }
+
+                        &-image {
+                            height: 2rem;
+                            aspect-ratio: 1 / 1;
+                        }
+                    }
+
+                    &-rating {
+                        gap: .4rem;
+        
+                       &-star {
+                            height: .85rem;
+                            width: .85rem;
+                       }
+                    }
+                }
+            }
+
+            .property-description {
+                flex-direction: column;
+                margin-top: 1rem;
+                gap: 1.25rem;
+
+                .accordion {
+                    flex: 1;
+    
+                    .accordion-header {
+                        border-radius: 5px;
+                        padding: .35rem 1rem;
+    
+                        .accordion-title {
+                            @include font($fontSize: .8rem);
+                        }
+                    }
+                    
+                    .collapse-content {
+                        @include font($fontWeight: 400, $fontSize: .75rem);
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(large) {
+        margin: 1rem $margin-l-lr 0;
+
+        .property {
+            margin-top: 1.85rem;
+
+            .property-infos {
+                flex-direction: row;
+
+                .property-left {
+                    h1 {
+                        @include font($fontSize: 2.25rem);
+                    }
+
+                    &-location {
+                        @include font($fontSize: 1.125rem);
+                    }
+
+                    &-tags {
+                        margin-top: 1.25rem;
+                    
+                        span {
+                            @include font($fontSize: .875rem);
+                            border-radius: 10px;
+                        }
+                    }
+                }
+
+                .host {
+                    width: fit-content;
+                    gap: 1.65rem;
+        
+                    &-profile {
+                        &-name {
+                            @include font($fontSize: 1.125rem);
+                        }
+        
+                        &-image {
+                            height: 4rem;
+                            aspect-ratio: 1 / 1;
+                        }
+                    }
+        
+                    &-rating {
+                        gap: 1rem;
+        
+                       &-star {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+            .property-description {
+                flex-direction: row;
+                margin-top: 1.5rem;
+                gap: 4.75rem;
+    
+                .accordion {
+                    flex: 1;
+    
+                    .accordion-header {
+                        border-radius: 10px;
+                        padding: .5rem 1rem;
+    
+                        .accordion-title {
+                            @include font($fontSize: 1.125rem);
+                        }
+                    }
+    
+                    .collapse-content {
+                        @include font($fontWeight: 400, $fontSize: 1.125rem);
+                    }
+                }
+            }
+        }
+    }
+}

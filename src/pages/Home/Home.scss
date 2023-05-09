@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.card-container {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $light-grey-color;
+    
+    @include responsive(small) {
+        margin: 1.375rem $margin-s-lr 0;
+        padding: 0;
+        gap: 1.25rem;
+
+        .card {
+            aspect-ratio: 1/.75;
+        }
+    }
+
+    @include responsive(medium) {
+        border-radius: 1rem;
+        margin: 2rem $margin-m-lr 0;
+        padding: 2rem;
+        gap: 2rem
+    }
+
+    @include responsive(xlarge) {
+        border-radius: 1.5rem;
+        margin: 2.5rem $margin-l-lr 0;
+        padding: 3rem;
+        gap: 3rem
+    }
+}
