@@ -1,6 +1,6 @@
 import './Nav.scss';
 import { Link } from 'react-router-dom';
-import brandImage from "../../assets/img/LOGO.svg";
+import brandImage from "../../assets/img/brand_logo.svg";
 import { useState } from 'react';
 
 const Nav = () => {
