@@ -1,7 +1,6 @@
 import "./Property.scss";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { logements } from "../../data/logements";
 import Carousel from "../../components/Carousel/Carousel";
 import Accordion from "../../components/Accordion/Accordion";
 
@@ -11,16 +10,23 @@ const Property = () => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        const result = logements.find(e => e.id === id);
-        
-        if (!result) {
-            let status = 404;
+        (async() => {
+            await fetch(`${window.location.origin}/logements.json`)
+                .then(response => response.json())
+                .then(result => {
+                    const logement = result.find(e => e.id === id);
+                    
+                    if (!logement) {
+                        let status = 404;
 
-            navigate(`/${status}-not-found`, { state: {status: status} });
-        }
-        else {
-            setData(result);
-        }
+                        navigate(`/${status}-not-found`, { state: {status: status} });
+                    }
+                    else {
+                        setData(logement);
+                    }
+                });
+                
+        })();
     }, []);
 
     return <>
