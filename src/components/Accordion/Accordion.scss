@@ -1,0 +1,109 @@
+@use "../../scss/" as *;
+
+.accordion {
+    .accordion-header {
+        background-color: $main-color;
+        border-radius: .31rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        align-items: center;
+    
+        .accordion-title {
+            color: #FFFFFF;
+        }
+
+        img {
+            transition: transform ease .5s;
+        }
+
+        .open {
+            transform: rotate(180deg);
+        }
+    }
+
+    .collapse {
+        height: 0;
+        overflow: hidden;
+        transition: height ease .5s;
+        background-color: #F7F7F7;
+        border-radius: .31rem;
+
+        .collapse-content {
+            color: #FF6060;
+            line-height: 142.6%;
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: .15rem .125rem .575rem .125rem;
+            }
+        }
+    }
+
+    @include responsive(small) {
+            .accordion-header {
+                padding: 0.35rem 1rem;
+            
+                .accordion-title {
+                    @include font($fontSize: .8rem);
+                }
+        
+                img {
+                    height: 1.125rem;
+                    width: 1.125rem;
+                }
+            }
+
+            .collapse {
+                .collapse-content {
+                    @include font($fontWeight: 400, $fontSize: .75rem);
+                    padding: 1rem 0.45rem 3.3rem 0.7rem;
+                }
+            }
+    }
+
+    @include responsive(medium) {
+        .accordion-header {
+            padding: 0.45rem 1rem;
+        
+            .accordion-title {
+                @include font($fontSize: 1rem);
+            }
+    
+            img {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+
+        .collapse {
+            .collapse-content {
+                @include font($fontWeight: 400, $fontSize: 1rem);
+                padding: 1rem 0.45rem 2.3rem 0.85rem;
+            }
+        }
+    }
+
+    @include responsive(large) {
+        .accordion-header {
+            padding: 0.5rem 1rem;
+        
+            .accordion-title {
+                @include font($fontSize: 1.5rem);
+            }
+    
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+
+        .collapse {
+            .collapse-content {
+                @include font($fontWeight: 400, $fontSize: 1.5rem);
+                padding: 1.7rem 1.125rem 1.125rem 1.125rem;
+            }
+        }
+    }
+}

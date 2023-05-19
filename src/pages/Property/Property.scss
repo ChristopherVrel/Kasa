@@ -77,7 +77,7 @@
                     display: flex;
 
                    &-star {
-                        background: url("../../assets/img/star.svg");
+                        background: url("../../assets/img/star_icon.svg");
                         display: inline-block;
                         background-position: center;
                         background-repeat: no-repeat;
@@ -89,7 +89,7 @@
                             display: block;
                             width: 100%;
                             height: 100%;
-                            mask-image: url("../../assets/img/star.svg");
+                            mask-image: url("../../assets/img/star_icon.svg");
                             mask-position: center;
                             mask-size: contain;
                             mask-repeat: no-repeat;
@@ -129,7 +129,7 @@
                     
                         span {
                             @include font($fontSize: .675rem);
-                            border-radius: 5px;
+                            border-radius: .31rem;
                         }
                     }
                 }
@@ -172,7 +172,7 @@
                     flex: 1;
     
                     .accordion-header {
-                        border-radius: 5px;
+                        border-radius: .31rem;
                         padding: .35rem 1rem;
     
                         .accordion-title {
@@ -213,7 +213,7 @@
                     
                         span {
                             @include font($fontSize: .675rem);
-                            border-radius: 5px;
+                            border-radius: .31rem;
                         }
                     }
                 }
@@ -256,7 +256,7 @@
                     flex: 1;
     
                     .accordion-header {
-                        border-radius: 5px;
+                        border-radius: .31rem;
                         padding: .35rem 1rem;
     
                         .accordion-title {
@@ -296,7 +296,7 @@
                     
                         span {
                             @include font($fontSize: .875rem);
-                            border-radius: 10px;
+                            border-radius: .625rem;
                         }
                     }
                 }
@@ -336,7 +336,7 @@
                     flex: 1;
     
                     .accordion-header {
-                        border-radius: 10px;
+                        border-radius: .625rem;
                         padding: .5rem 1rem;
     
                         .accordion-title {
