@@ -1,0 +1,77 @@
+@use "../../scss/" as *;
+
+.card {
+    background-color: $main-color;
+    aspect-ratio: 1 / 1;
+    border-radius: .625rem;
+    position: relative;
+
+    a {
+        border-radius: inherit;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: inherit;
+        }
+    
+        .card-overlay {
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            border-radius: inherit;
+            position: absolute;
+            z-index: 4;
+            width: 100%;
+    
+            .card-title {
+                @include font($fontSize: 1.125rem);
+                color: #FFFFFF;
+    
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: flex-end;
+    
+                p {
+                    white-space: break-spaces;
+                    text-align: left;
+                    margin: 1.25rem;
+                }
+            }
+        }
+    }
+
+    &-spinner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $main-color;
+        border-radius: .625rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 3;
+    }
+
+    @include responsive(small) {
+        @include colWidthCalc(1, 1.25rem);
+    }
+
+    @include responsive(medium) {
+        @include colWidthCalc(2, 2rem);
+    }
+    
+    @include responsive(xlarge) {
+        @include colWidthCalc(3, 3rem);
+    }
+}
+
+

@@ -19,10 +19,6 @@ const Carousel = ({ pictures }) => {
         setIsLoaded(false);
     }, [picIndex, pictures]);
 
-    const handleLoad = () => {
-        setIsLoaded(true);
-    }
-
     return <>
         <div className="carousel">
             {
@@ -39,7 +35,7 @@ const Carousel = ({ pictures }) => {
             }
             {
                 (pictures) && 
-                <img onLoad={() => handleLoad()} className="carousel-img" src={pictures[picIndex]} alt={`property-${picIndex + 1}`} />
+                <img onLoad={() => setIsLoaded(true)} className="carousel-img" src={pictures[picIndex]} alt={`property-${picIndex + 1}`} />
                 
             }
             {

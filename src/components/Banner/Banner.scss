@@ -1,0 +1,89 @@
+@use "../../scss/" as *;
+
+.banner {
+    background-color: $main-color;
+    position: relative;
+
+    img {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &-overlay {
+        background: rgb(0 0 0 / 30%);
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: inherit;
+        position: absolute;
+        z-index: 3;
+
+        h1 {
+            margin: 0;
+            @include font();
+            color: #FFFFFF;
+        }
+    }
+
+    &-overlay-loader {
+        position: absolute;
+        background-color: $main-color;
+        border-radius: 1.5rem;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+    }
+
+    @include responsive(small) {
+        margin: 1.25rem $margin-s-lr 0;
+        height: 7rem;
+        border-radius: .625rem;
+
+        &-overlay {
+            justify-content: flex-start;
+            
+            h1 {
+                padding: 1rem;
+                font-size: 1.5rem;
+                white-space: pre-line;
+            }
+        }
+    }
+
+    @include responsive(medium) {
+        margin: 2.75rem $margin-m-lr 0;
+        height: 10rem;
+        border-radius: 1rem;
+
+        &-overlay {
+            justify-content: flex-start;
+            
+            h1 {
+                padding: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @include responsive(large) {
+        margin: 4rem $margin-l-lr 0;
+        height: 14rem;
+        border-radius: 1.5rem;
+
+        &-overlay {
+            justify-content: center;
+            
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+}
