@@ -1,0 +1,71 @@
+@use "../../scss/" as *;
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-brand-container {
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &-link-container {
+        display: flex;
+        
+        a {
+            @include font();
+            color: $main-color;
+            text-decoration: none;
+        }
+
+        .nav-link-selected {
+            text-decoration: underline;
+        }
+    }
+
+    @include responsive(small) {
+        padding: 1.25rem $margin-s-lr 0;
+
+        &-brand-container {
+            height: 3rem;
+        }
+
+        &-link-container {
+            gap: 1rem;
+
+            a {
+                font-size: .75rem;
+                line-height: .75rem;
+            }
+        }
+    }
+
+    @include responsive(medium) {
+        padding: 2rem $margin-m-lr 0;
+
+        &-link-container {
+            gap: 1.5rem;
+            
+            a {
+                font-size: 1.25rem;
+                line-height: 1.25rem;
+            }
+        }
+    }
+
+    @include responsive(large) {
+        padding: 4rem $margin-l-lr 0;
+
+        &-link-container {
+            gap: 3rem;
+            
+            a {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+}
