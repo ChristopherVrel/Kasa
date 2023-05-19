@@ -1,7 +1,7 @@
-import './Nav.scss';
-import { Link } from 'react-router-dom';
+import "./Nav.scss";
+import { Link } from "react-router-dom";
 import brandImage from "../../assets/img/brand_logo.svg";
-import { useState } from 'react';
+import { useState } from "react";
 
 const Nav = () => {
     const [isSelected, setIsSelected] = useState("/");

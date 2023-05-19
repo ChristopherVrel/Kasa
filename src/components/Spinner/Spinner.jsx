@@ -1,4 +1,4 @@
-import './Spinner.scss';
+import "./Spinner.scss";
 
 // spinner by https://loading.io/css/
 

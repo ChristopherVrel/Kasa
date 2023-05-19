@@ -1,5 +1,5 @@
-import './Footer.scss';
-import { Link } from 'react-router-dom';
+import "./Footer.scss";
+import { Link } from "react-router-dom";
 import brandImage from "../../assets/img/brand_logo_w.svg";
 
 const Footer = () => {
