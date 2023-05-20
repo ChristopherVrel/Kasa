@@ -6,9 +6,17 @@ import { SpinnerRipple } from "../Spinner/Spinner";
 const Card = ({ item }) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
+    const handleClick = () => {
+        let navUnderline = document.querySelector(".nav-link-selected");
+
+        if (navUnderline) {
+            navUnderline.classList.remove("nav-link-selected");
+        }
+    }
+
     return <> 
         <div className="card">
-            <Link to={`property/${item.id}`}>
+            <Link to={`property/${item.id}`} onClick={() => handleClick()}>
                 {
                     (!isLoaded) &&
                     <div className="card-spinner">
