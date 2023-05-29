@@ -10,7 +10,7 @@ const Router = () => {
             <Route exact path="/" element={<Home/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/property/:id" element={<Property/>} />
-            <Route path="*" element={<Error state={{ status : 404 }} />}/>
+            <Route path="*" element={<Error defaultState={{ status: 404 }} />}/>
         </Routes>
     )
 }
