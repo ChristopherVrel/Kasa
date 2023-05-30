@@ -9,6 +9,14 @@ const Property = () => {
     const navigate = useNavigate();
     const [data, setData] = useState();
 
+    const removeUnderline = () => {
+        let navUnderline = document.querySelector(".nav-link-selected");
+
+        if (navUnderline) {
+            navUnderline.classList.remove("nav-link-selected");
+        }
+    }
+
     useEffect(() => {
         (async() => {
             await fetch(`${window.location.origin}/logements.json`)
@@ -27,6 +35,9 @@ const Property = () => {
                 });
                 
         })();
+
+        removeUnderline();
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
